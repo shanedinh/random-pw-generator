@@ -29,29 +29,29 @@ function generatePassword() {
     }
     // lowercase added to array if chosen
   if (lowerCaseConfirm) {
-    charArray += charArray.concat(lowerCase);
+    charArray = charArray.concat(lowerCase);
     console.log("lowercase included in password")
   }
     // uppercase added to array if chosen
   if (upperCaseConfirm) {
-    charArray += charArray.concat(upperCase);
+    charArray = charArray.concat(upperCase);
     console.log("uppercase included in password")
   }
    // numbers added to array if chosen
   if (numbersConfirm) {
-    charArray += charArray.concat(numbers);
+    charArray = charArray.concat(numbers);
     console.log("numbers included in password")
   }  
    // special characters added to array if chosen
   if (specialsConfirm) {
-    charArray += charArray.concat(specials);
+    charArray = charArray.concat(specials);
     console.log("special characters included in password")
   }
 
   // for loop runs every time and and picks characters at random and until number of characters is met
   var password = '';
   for (var i = 0; i < passwordLength; i++) {
-    password += charArray.charAt(Math.floor(Math.random() * charArray.length));
+    password = password + charArray[Math.floor(Math.random() * charArray.length)];
     console.log(password);
   }
   return password;
